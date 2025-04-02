@@ -34,7 +34,7 @@ This repository includes code and projects related to:
     ├── node-express/ │ 
     ├── database/ 
   
-   │> ── fullstack-projects/ 
+   > │ ── fullstack-projects/ 
      │── README.md
 
 
