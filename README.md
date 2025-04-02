@@ -24,3 +24,34 @@ This repository includes code and projects related to:
 - 🔒 **Authentication & Authorization** - Using JWT and OAuth
 
 ## 📁 Repository Structure
+full-stack-learning/ 
+  │── frontend/ │ 
+    ├── html-css/ │ 
+    ├── javascript/ 
+    ├── react
+    
+  │── backend/ │ 
+    ├── node-express/ │ 
+    ├── database/ 
+  
+   │── fullstack-projects/ 
+     │── README.md
+
+
+## 🛠 How to Use This Repository
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/yourusername/fullstack-learning.git
+   ```
+2. Navigate to the required directory and start learning.
+3. Feel free to contribute or suggest improvements!
+
+## 🚀 Future Plans
+- 🔥 Add more real-world projects
+- 💡 Implement best practices in full-stack development
+- 📈 Explore additional frameworks and libraries
+
+## 📬 Get in Touch
+> If you have any suggestions, feel free to reach out or open an issue in this repository.
+Happy Coding! 😊
+
