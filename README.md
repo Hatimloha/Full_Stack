@@ -30,11 +30,11 @@ This repository includes code and projects related to:
     ├── javascript/ 
     ├── react
     
-  │── backend/ │ 
+  > │── backend/ │ 
     ├── node-express/ │ 
     ├── database/ 
   
-   │── fullstack-projects/ 
+   │> ── fullstack-projects/ 
      │── README.md
 
 
