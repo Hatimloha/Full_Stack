@@ -24,7 +24,7 @@ This repository includes code and projects related to:
 - 🔒 **Authentication & Authorization** - Using JWT and OAuth
 
 ## 📁 Repository Structure
-full-stack-learning/ 
+> full-stack-learning/ 
   │── frontend/ │ 
     ├── html-css/ │ 
     ├── javascript/ 
