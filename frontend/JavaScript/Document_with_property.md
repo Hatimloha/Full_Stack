@@ -134,71 +134,81 @@ document.addEventListener("click", function(event) {
 document.designMode = "on"; // Try this in the console 😄
 ```
 
-## 
--
+## 20. document.getSelection()
+- Use case: Returns the currently selected text on the page.
+```javascript
+document.addEventListener("mouseup", () => {
+    let selected = document.getSelection().toString();
+    console.log("You selected:", selected);
+});
+```
+
+## 21. document.createTextNode()
+- Use case: Create just text (without tags), then insert into the DOM.
+```javascript
+let text = document.createTextNode("Hello Hatim!");
+document.body.appendChild(text);
+```
+
+## 22. document.importNode()
+- Use case: Import a node from another document or template.
+```javascript
+// Used for templates or loading external fragments
+```
+
+## 23. document.adoptNode() 
+- Use case: Adopts a node from another document — used with iframes or imported documents.
+
+## 24. document.documentElement
+- Use case: Refers to the <html> element.
+```javascript
+document.documentElement.style.backgroundColor = "#f0f0f0";
+```
+
+## 25. document.styleSheets
+- Use case: Access all the stylesheets linked or written in your HTML.    
+```javascript
+console.log(document.styleSheets[0]);
+```
+
+## 26. document.scripts
+- Use case: Returns a list of all <script> elements.
+```javascript
+console.log(document.scripts.length);
+```
+
+## 27. document.anchors
+- Use case: Returns a list of all <a name="..."> anchors in the document (not commonly used anymore).
 ```javascript
 
 ```
 
-## 
--
+## 28. document.hasFocus()
+- Use case: Check if the browser tab is currently active.
 ```javascript
-
+if (document.hasFocus()) {
+    console.log("Tab is active");
+}
 ```
 
-## 
--
+## 29. document.onvisibilitychange (used with visibilityState)
+- Use case: Know when the user switches tabs.
 ```javascript
-
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+        console.log("User left the tab");
+    } else {
+        console.log("User returned to the tab");
+    }
+});
 ```
 
-
-## 
--
+## 30. document.ondblclick, onkeydown, onmousemove, etc
+- Attach events directly to the whole document.
 ```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
+document.onkeydown = function(event) {
+    console.log("Key pressed:", event.key);
+};
 ```
 
 ## 
