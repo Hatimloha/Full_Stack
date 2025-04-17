@@ -42,20 +42,22 @@ let paras = document.getElementsByTagName("p");
 console.log(paras.length); // 2
 ```
 
-##
--
+## 4. CSS Selector (Single)
+- Use Case: Selects the first match of any valid CSS selector (.class, #id, div p, etc.)
 ```javascript
-
+document.querySelector("cssSelector")
+```
+```javascript
+let firstBox = document.querySelector(".box");
+firstBox.style.border = "2px solid red";
 ```
 
-##
--
+## 5. CSS Selector (Multiple)
+- Use Case: Selects all elements matching the selector (returns a NodeList).
 ```javascript
-
+document.querySelectorAll("cssSelector")
 ```
-
-##
--
 ```javascript
-
+let allBoxes = document.querySelectorAll(".box");
+allBoxes.forEach(box => box.style.padding = "10px");
 ```
