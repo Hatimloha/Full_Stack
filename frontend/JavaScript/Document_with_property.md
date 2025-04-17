@@ -2,7 +2,7 @@
 
 ## 1 document.getElementById("id")
 - Use case: Selects an element by its unique ID.
--✅ Most commonly used to change text, style, or content.
+- ✅ Most commonly used to change text, style, or content.
 ```javascript
 document.getElementById("myPara").innerText = "Updated!";
 ```
