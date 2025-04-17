@@ -1,5 +1,5 @@
 #  DOM tree navigation and manipulation
-> This s super important for real-world JavaScript work. Let me explain each term clearly with examples so you can visualize how they work.
+> This is super important for real-world JavaScript work. Let me explain each term clearly with examples so you can visualize how they work.
 
 ## 1. childNodes
 - What it does: Returns a NodeList of all child nodes of an element — including text nodes (like whitespace).
