@@ -211,27 +211,4 @@ document.onkeydown = function(event) {
 };
 ```
 
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
-
-
-## 
--
-```javascript
-
-```
-
-## 
--
-```javascript
-
-```
+> This content i have copy paste from Chatgpt (Easy to understand)
