@@ -42,67 +42,67 @@ newDiv.innerText = "I was created with JavaScript!";
 document.body.appendChild(newDiv);
 ```
 
-## 2
--
--
+## 7. document.body
+- Use case: Access the <body> of the document.
 ```javascript
-
+document.body.style.backgroundColor = "lightblue";
 ```
 
-## 2
--
--
+## 8. document.title
+- Use case: Get or set the page title (the one shown in the browser tab).
 ```javascript
-
+console.log(document.title); // Get
+document.title = "New Title"; // Set
 ```
 
-## 2
--
--
+## 9. document.innerHTML
+- Use case: Set or get the HTML content inside an element.
 ```javascript
-
+document.getElementById("content").innerHTML = "<b>Bold text</b>";
 ```
 
-## 2
--
--
+## 10. document.addEventListener("event", function)
+- Use case: Attach event listeners to the document (or any element).
 ```javascript
-
+document.addEventListener("click", function () {
+    alert("Document was clicked!");
+});
 ```
 
-## 2
--
--
+## 11. document.forms
+- Use case: Access all forms in the document.
 ```javascript
-
+let myForm = document.forms[0];
+console.log(myForm.action);
 ```
 
-## 2
--
--
+## 12. document.images
+- Use case: Access all <img> tags on the page.
 ```javascript
-
+let imgs = document.images;
+console.log("Total images:", imgs.length);
 ```
 
-## 2
--
--
+## 13. document.links
+- Use case: Get all the <a> elements (hyperlinks).
 ```javascript
-
+let links = document.links;
+for (let link of links) {
+    console.log(link.href);
+}
 ```
 
-## 2
--
--
+## 14. document.head
+- Use case: Access the <head> section of your HTML document.
 ```javascript
-
+console.log(document.head.innerHTML);
 ```
 
-## 2
--
--
+## 15. document.cookie
+- Use case: Get or set cookies on the client side.
 ```javascript
-
+document.cookie = "username=Hatim; expires=Fri, 31 Dec 2025 12:00:00 UTC";
+console.log(document.cookie);
 ```
 
 ## 2
