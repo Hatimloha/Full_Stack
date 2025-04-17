@@ -105,29 +105,122 @@ document.cookie = "username=Hatim; expires=Fri, 31 Dec 2025 12:00:00 UTC";
 console.log(document.cookie);
 ```
 
-## 2
--
+## 16. document.readyState
+- Use case: Check if the document has finished loading.
+```javascript
+if (document.readyState === "complete") {
+    console.log("Document fully loaded");
+}
+```
+
+## 17. document.activeElement
+- Use case: Know which element currently has focus.
+```javascript
+console.log("Focused element is:", document.activeElement);
+```
+
+## 18. document.elementFromPoint(x, y)
+- Use case: Returns the top-most element at the specified (x, y) position.
+```javascript
+document.addEventListener("click", function(event) {
+    let el = document.elementFromPoint(event.clientX, event.clientY);
+    console.log("Clicked on:", el.tagName);
+});
+```
+
+## 19. document.designMode = "on"
+- Use case: Makes the whole page editable!
+```javascript
+document.designMode = "on"; // Try this in the console 😄
+```
+
+## 
 -
 ```javascript
 
 ```
 
-## 2
--
--
-```javascript
-
-```
-
-## 2
--
+## 
 -
 ```javascript
 
 ```
 
-## 2
+## 
 -
+```javascript
+
+```
+
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+## 
+-
+```javascript
+
+```
+
+
+## 
+-
+```javascript
+
+```
+
+## 
 -
 ```javascript
 
