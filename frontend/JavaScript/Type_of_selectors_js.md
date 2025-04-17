@@ -29,7 +29,7 @@ boxes[0].style.backgroundColor = "yellow";
 ```
 
 ## 3. Tag Selector
-- Use Case: When you want to select all elements with the same tag like <p>, <div>, etc.
+- Use Case: When you want to select all elements with the same tag like p, div, etc.
 ```javascript
 document.getElementsByTagName("tagName")
 ```
