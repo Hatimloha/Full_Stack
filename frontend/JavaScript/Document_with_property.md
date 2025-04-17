@@ -15,7 +15,7 @@ elements[0].style.backgroundColor = "yellow";
 ```
 
 ## 3 document.getElementsByTagName("tag")
-- Use case: Selects all elements of a specific tag "<p> | <div> etc."
+- Use case: Selects all elements of a specific tag "p, div, etc"
 ```javascript
 let allParas = document.getElementsByTagName("p");
 console.log(allParas.length);
