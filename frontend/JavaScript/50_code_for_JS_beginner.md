@@ -1,6 +1,6 @@
 # 50 JavaScript Code Examples for Learning (Beginner):
 
-- 1. HTML file:
+- 1 HTML file: 
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -262,8 +262,11 @@
         <h2>Example 50: Web Worker (Inline)</h2>
         <div class="consoleOutput" id="output50"></div>
     </div>
-
-    <script>
+<script src="script.js"></script>
+</body>
+</html>
+```
+```javascript
         function appendToConsole(exampleNumber, text) {
             const outputDiv = document.getElementById(`output${exampleNumber}`);
             if (outputDiv) {
@@ -986,8 +989,4 @@
         example48();
         example49();
         example50();
-
-    </script>
-</body>
-</html>
 ```
