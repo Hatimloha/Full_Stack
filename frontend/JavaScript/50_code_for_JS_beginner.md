@@ -1,3 +1,7 @@
+# 50 JavaScript Code Examples for Learning (Beginner):
+
+- 1. HTML file:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -986,3 +990,4 @@
     </script>
 </body>
 </html>
+```
