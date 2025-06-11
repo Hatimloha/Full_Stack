@@ -55,3 +55,29 @@ This repository includes code and projects related to:
 > If you have any suggestions, feel free to reach out or open an issue in this repository.
 Happy Coding! 😊
 
+
+# Theory:
+## Operators let you perform operations on variables and values. JavaScript has several categories of operators:
+
+### 1. Arithmetic Operators:
+- Addition "+": 3 + 2 → 5
+- Subtraction "-": 5 - 3 → 2
+- Multiplication "*": 2 * 3 → 6
+- Division "/": 10 / 2 → 5
+- Modulus (Remainder) "%": 10 % 3 → 1
+- Exponentiation "**": 2 ** 3 → 8
+- Increment "++":	x++
+- Decrement "--": x--
+
+### 2. Comparison Operators:
+- Equal to (loose) "==": 5 == '5' → true
+- Equal value and type "===": 5 === '5' → false
+- Not equal "!=": 5 != 3 → true
+- Not equal value/type ""!==": 5 !== '5' → true
+- Greater than ">": 5 > 3 → true
+- Less than "<": 2 < 3 → true
+- Greater or equal ">=":	5 >= 5 → true
+- Less or equal "<=": 4 <= 4 → true
+
+
+
