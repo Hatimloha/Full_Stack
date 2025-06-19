@@ -1,0 +1,7 @@
+// Loop through numbers 1–50 and print only those divisible by 3 and 5.
+
+for(let i = 0; i <= 50; i ++){
+    if(i % 3 == 0 && i % 5 == 0){
+        console.log(i)
+    }
+}
