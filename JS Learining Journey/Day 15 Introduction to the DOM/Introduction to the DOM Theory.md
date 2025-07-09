@@ -20,10 +20,10 @@ document.getElementById("title").innerText = "Hello, Hatim!"
 
 #### Basic DOM Methods:
         Method	            |           Description
-getElementById("id")	    | Selects a single element by ID
-getElementsByClassName()    | Selects elements by class name (HTMLCollection)
-getElementsByTagName()	    | Selects elements by tag (HTMLCollection)
-querySelector()	            | Selects the first matching element (CSS-style selector)
-querySelectorAll()	        | Selects all matching elements (NodeList)
+- getElementById("id")	    | Selects a single element by ID
+- getElementsByClassName()    | Selects elements by class name (HTMLCollection)
+- getElementsByTagName()	    | Selects elements by tag (HTMLCollection)
+- querySelector()	            | Selects the first matching element (CSS-style selector)
+- querySelectorAll()	        | Selects all matching elements (NodeList)
 
 
