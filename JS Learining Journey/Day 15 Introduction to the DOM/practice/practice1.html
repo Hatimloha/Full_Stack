@@ -1,0 +1,21 @@
+<!-- Create an HTML page with a <p> tag and a button. Change the paragraph text when the button is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p id="paraText">Let's learn JavaScript</p>
+    <button onclick="paraChange()">Click Me</button>
+
+
+    <script>
+        function paraChange(){
+        document.getElementById("paraText").innerText = "Let's Go........"; 
+    }
+    </script>
+</body>
+</html>

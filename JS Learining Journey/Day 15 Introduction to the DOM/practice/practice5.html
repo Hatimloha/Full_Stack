@@ -1,0 +1,46 @@
+<!-- Create an input box and a button. On button click, alert the value typed in the input. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert - Page</title>
+   <style>
+     body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        button{
+            border: none;
+            background-color: #333;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        input{
+            font-size: 20px;
+            padding: 10px;
+            margin-right: 20px;
+        }
+   </style>
+</head>
+<body>
+    <h1>Alert Box</h1>
+    <input type="text" id="message" placeholder="Enter the message">
+    <button onclick="alertPop()">Submit</button>
+
+
+    <script>
+        function alertPop(){
+            let message = document.getElementById("message").value;
+            alert(message)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- Exercise with Code (in HTML + JS) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Example</title>
+</head>
+<body>
+    <h1 id="heading">Hello DOM!</h1>
+    <button onclick="changeHeading()">Change Text</button>
+
+    <script>
+        function changeHeading(){
+            document.getElementById("heading").innerText = "You clicked the button!";
+        } 
+    </script>
+</body>
+</html>

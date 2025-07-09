@@ -1,0 +1,54 @@
+<!-- Use getElementsByClassName() to select all items of a list and change their content. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change List Content</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 180px;
+        }
+
+        ul{
+            font-size: 40px;
+            display: flex;
+            gap: 50px;
+            padding-top: 10px;
+            justify-content: center;
+        }
+       
+        button{
+            font-size: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            font-weight: bolder;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>select all items of a list and change their content</h1>
+    <ul class="list">
+        <li class="item">Hatim</li>
+        <li class="item">Jafar</li>
+        <li class="item">Jumana</li>
+    </ul>
+    <button onclick="changeContent()">Change Content</button>
+
+
+    <script>
+        function changeContent(){
+            let items = document.getElementsByClassName("item");
+            for(let i = 0; i < items.length; i++){
+                items[i].innerHTML = `Person ${i + 1}`
+            }
+        }
+    </script>
+</body>
+</html>

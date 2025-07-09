@@ -1,0 +1,51 @@
+<!-- Try changing the background color of the page using JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Change</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        button{
+            border: none;
+            background-color: #333;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Background Color Change</h1>
+    <button onclick="changeColor()">Change Color</button>
+
+
+    <script>
+        function getRandomColor(){
+            let color = "#";
+            let letters = "0123456789ABCDEF";
+
+            for(let i = 0; i < 6; i++){
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeColor(){
+            document.body.style.backgroundColor = getRandomColor()
+        }
+
+
+    </script>
+</body>
+</html>
