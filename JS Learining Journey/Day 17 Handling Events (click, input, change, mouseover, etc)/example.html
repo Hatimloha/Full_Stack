@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event: input</title>
+  <style>
+    body{
+        background-color: aquamarine;
+        color: black;
+        font-weight: bolder;
+        margin-top: 200px;
+        text-align: center;
+        font-size: 28px;
+    }
+    input{
+        font-size: 28px;
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Type something below:</h2>
+  <input type="text" id="inputField" placeholder="Start typing..." />
+  <p id="output"></p>
+
+  <script>
+    let input = document.getElementById("inputField");
+    let output = document.getElementById("output");
+
+    input.addEventListener("input", () => {
+        output.textContent = "You typed: " + input.value;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!-- Add a "Clear All" button → fruits.length = 0 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array & DOM</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 100px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Fruit Name</h2>
+  <input type="text" id="fruitInput" placeholder="e.g. Mango">
+  <button onclick="addFruit()">Add Fruit</button>
+  <button onclick="removeFruit()">Remove Fruit</button>
+  <button onclick="clearAll()">Clear All</button>
+
+  <ul id="fruitList"></ul>
+
+  <script>
+    const fruits = []
+    const fruitInput = document.getElementById("fruitInput");
+    const list = document.getElementById("fruitList");
+
+    function addFruit(){
+        if(fruitInput.value !== ""){
+        fruits.push(fruitInput.value);
+        renderList();
+        fruitInput.value = "";
+    }};
+
+    function renderList(){
+        list.innerHTML = "";
+        fruits.forEach((fruit, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${index + 1}. ${fruit}`
+            list.appendChild(li);
+        })
+    }
+
+    function removeFruit(){
+        fruits.pop();
+        renderList();
+    }
+
+    function clearAll(){
+        fruits.length = 0;
+        renderList()
+    }
+
+  </script>
+</body>
+</html>

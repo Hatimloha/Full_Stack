@@ -1,0 +1,55 @@
+<!-- Add a dark mode toggle button that uses .classList.toggle("dark") on <body>. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector - underline</title>
+    <style>
+        body{
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button{
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .darkMode{
+            color: white;
+            background-color: black;
+        }
+
+        .button-darkMode{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Let's Underline</h1>
+    <h2>My name is Hatim</h2>
+    <h2>My name is Ali</h2>
+    <h2>My name is Ram</h2>
+    <h2>My name is Subham</h2>
+    <h2>My name is Vinod</h2>
+    <h2>My name is Jafar</h2>
+    <h2>My name is Abbas</h2>
+    <button onclick="underline()" id="underlineButton">Underline</button>
+
+    <script>
+        function underline(){
+            let h2 = document.querySelectorAll("h2");
+            h2.forEach(item => {
+                item.style.textDecoration = "underline"
+            })
+        }
+    </script>
+</body>
+</html> 

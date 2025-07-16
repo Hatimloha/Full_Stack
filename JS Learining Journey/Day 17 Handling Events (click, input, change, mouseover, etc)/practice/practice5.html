@@ -1,0 +1,42 @@
+<!-- Form – Show Alert with Input Value on Submit -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Submit Alert</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial;
+    }
+
+    input, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Your Name</h2>
+  <form id="nameForm">
+    <input type="text" id="nameInput" placeholder="Your name" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("nameForm");
+    const input = document.getElementById("nameInput");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault(); // prevents page reload
+        alert("Hello, " + input.value + "!");
+    });
+
+  </script>
+
+</body>
+</html>

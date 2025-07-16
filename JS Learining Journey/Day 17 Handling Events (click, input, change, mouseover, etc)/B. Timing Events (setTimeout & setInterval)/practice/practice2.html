@@ -1,0 +1,43 @@
+<!-- Create a live digital counter that increases every 1 second using setInterval(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Counter</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+
+        .box{
+            border: 2px solid white;
+            width: 50vh;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Digital Counter</h1>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        let result = document.getElementById("result");
+        let count = 0;
+        setInterval(() => {
+            count ++
+            result.textContent = `Watch Started: ${count}`
+            result.style.color = "green";
+            result.style.fontSize = "25px"
+        }, 1000);
+    </script>
+
+</body>
+</html>

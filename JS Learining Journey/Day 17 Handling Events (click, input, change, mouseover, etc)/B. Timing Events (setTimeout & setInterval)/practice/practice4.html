@@ -1,0 +1,64 @@
+<!-- Stop the interval after 10 seconds using clearInterval(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Counter - clearInterval</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+
+        .box{
+            border: 2px solid white;
+            width: 50vh;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 200px;
+        }
+
+        button{
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: green;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Digital Counter:</h1>
+        <button id="btn" onclick="startTime()">Start Time</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function startTime(){
+            let result = document.getElementById("result");
+            let count = 0;
+            let intervalid = setInterval(() => {
+                count ++
+                result.textContent = `Watch Started: ${count}`
+                result.style.color = "green";
+                result.style.fontSize = "25px"
+
+                if(count >= 10){
+                    clearInterval(intervalid);
+                }
+
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>

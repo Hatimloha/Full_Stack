@@ -1,0 +1,44 @@
+<!-- Use event.key in an input field to log what key is typed. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Refreshing</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 28px;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        input{
+            font-size: 28px;
+            padding: 10px;
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <h1>Stop Refreshing</h1>
+    <input type="text" id="userInput" placeholder="Enter Something...">
+    <h2 id="result"></h2>
+
+    <script>
+        let input = document.getElementById("userInput");
+        let result = document.getElementById("result")
+        
+        input.addEventListener("keydown", (event) => {
+            result.textContent = `Key: ${event.key}`
+            result.style.color = "green"
+        })
+
+    </script>
+
+</body>
+</html>

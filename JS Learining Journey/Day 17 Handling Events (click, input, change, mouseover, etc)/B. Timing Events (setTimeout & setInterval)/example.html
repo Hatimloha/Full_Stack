@@ -1,0 +1,21 @@
+<!-- ✅ Exercise 1: Show Message After 2 Seconds -->
+
+<button onclick="showMsg()">Click Me</button>
+<p id="msg"></p>
+
+<script>
+  function showMsg() {
+    setTimeout(() => {
+      document.getElementById("msg").textContent = "Hello, Hatim!";
+    }, 2000);
+  }
+</script>
+
+<!-- ✅ Exercise 2: Count Every Second Using setInterval -->
+<p id="count"></p>
+<script>
+    let counter = 0;
+    setInterval(() => {
+        counter++;
+    }, 1000); 
+</script>

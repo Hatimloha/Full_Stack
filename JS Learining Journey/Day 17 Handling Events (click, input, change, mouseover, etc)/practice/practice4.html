@@ -1,0 +1,45 @@
+<!-- Create a select menu (<select>) that logs the selected value on change. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        select{
+            width: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Your Favorite Language</h2>
+    <select id="languageSelect">
+        <option value="">-- Choice --</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="C++">C++</option>
+        <option value="Java">Java</option>
+        <option value="Ruby">Ruby</option>
+    </select>
+
+    <p id="result"></p>
+
+
+    <script>
+        const select = document.getElementById("languageSelect");
+        const result = document.getElementById("result");
+
+        select.addEventListener("change", () => {
+            console.log("You selected:", select.value);
+            result.textContent = `You Selected: ${select.value}`;
+        })
+    </script>
+</body>
+</html>

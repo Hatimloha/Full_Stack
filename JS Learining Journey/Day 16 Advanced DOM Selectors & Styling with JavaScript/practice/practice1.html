@@ -1,0 +1,56 @@
+<!-- // Create a list with 5 items and a button. On button click, toggle a class that changes their background color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList - toggle</title>
+    <style>
+        body{
+            font-size: 24px;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        ul li{
+            list-style: none;
+        }
+
+        button{
+            background-color: #333;
+            border: none;
+            color: white;
+            font-size: 24px;
+            margin-left: 40px;
+
+        }
+
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Name:</h2>
+    <ul>
+        <li class="student">Rahul</li>
+        <li class="student">Vinod</li>
+        <li class="student">Junaid</li>
+        <li class="student">Ali</li>
+        <li class="student">Ramesh</li>
+    </ul>
+
+    <button onclick="classToggle()">Dark Mode</button>
+
+    <script>
+        function classToggle(){
+            let students = document.querySelectorAll(".student")
+            students.forEach(student => {
+                student.classList.toggle("dark-mode")
+            })
+        }
+    </script>
+</body>
+</html>

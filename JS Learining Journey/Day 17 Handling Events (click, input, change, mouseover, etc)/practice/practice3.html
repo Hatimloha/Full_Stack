@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keydown Logger</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+
+    input {
+      font-size: 20px;
+      padding: 10px;
+      width: 300px;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Type in the input box:</h2>
+  <input type="text" id="textInput" placeholder="Start typing..." />
+  <p id="log"></p>
+
+  <script>
+    const input = document.getElementById("textInput");
+    const log = document.getElementById("log");
+
+    input.addEventListener("keydown", function(event) {
+      log.textContent = `Key Pressed: ${event.key}`;
+      console.log("Key Pressed:", event.key); // logs to console
+    });
+  </script>
+
+</body>
+</html>

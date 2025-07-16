@@ -1,0 +1,45 @@
+<!-- Display today’s full date in this format: DD/MM/YYYY. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Date</title>
+    <style>
+        body{
+            margin-top: 150px;
+            text-align: center;
+            background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+
+        #todayDate{
+            color: darkgreen;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Today's Date</h1>
+    <div id="todayDate"></div>
+
+
+    <script>
+        function today(){
+            let now = new Date();
+            const day = now.getDate().toString().padStart(2, "0")
+            const month = now.getMonth().toString().padStart(2, "0")
+            const year = now.getFullYear().toString().padStart(2, "0")
+
+            let fullDate = `${day}/${month}/${year}`
+
+            document.getElementById("todayDate").textContent = fullDate;
+        }
+        today()
+    </script>
+</body>
+</html>

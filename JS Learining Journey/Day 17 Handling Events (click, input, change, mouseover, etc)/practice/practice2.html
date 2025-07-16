@@ -1,0 +1,48 @@
+<!-- Create a <div> and change its color when the user hovers over it (mouseover). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        #box{
+            background-color: red;
+            border: 2px solid white;
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .Mouseover{
+            background-color: green;
+            transition: transform 0.5s ease-in;
+            transform: scale(120%);
+        }
+    </style>
+</head>
+<body>
+    <h2>Mouseover To Change Color</h2>
+    <div id="box">
+
+    </div>
+
+
+    <script>
+        let box = document.getElementById("box");
+
+        box.addEventListener("mouseover", () => {
+            box.classList.add("Mouseover")
+        })
+    </script>
+</body>
+</html>

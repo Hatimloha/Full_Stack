@@ -1,0 +1,32 @@
+<!-- 🛠 2. Exercise – Highlight All List Items on Button Click -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>querySelectorAll Demo</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>My Friends</h2>
+  <ul>
+    <li class="friend">Ali</li>
+    <li class="friend">Ravi</li>
+    <li class="friend">Junaid</li>
+  </ul>
+  <button onclick="highlightFriends()">Highlight</button>
+
+  <script>
+    function highlightFriends() {
+      let friends = document.querySelectorAll(".friend");
+      friends.forEach(friend => {
+        friend.classList.add("highlight");
+      });
+    }
+  </script>
+</body>
+</html>

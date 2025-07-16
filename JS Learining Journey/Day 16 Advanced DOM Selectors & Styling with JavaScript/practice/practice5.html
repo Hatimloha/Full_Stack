@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>classList.contains Example</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+
+    #box {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: lightgray;
+      transition: all 0.3s ease;
+    }
+
+    .active {
+      background-color: green;
+      color: white;
+      border: 3px solid black;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Check & Add Class</h1>
+  <div id="box"></div>
+  <button onclick="checkAndToggle()">Check Active Class</button>
+
+  <script>
+    function checkAndToggle() {
+      const box = document.getElementById("box");
+      if (box.classList.contains("active")) {
+        console.log("✅ 'active' class already exists.");
+      } else {
+        box.classList.add("active");
+        console.log("🟢 'active' class was not found, so it was added.");
+      }
+    }
+  </script>
+
+</body>
+</html>

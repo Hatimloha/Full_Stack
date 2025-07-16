@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit List with Edit</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 100px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+    ul {
+      list-style: none;
+      font-size: 20px;
+      padding: 0;
+    }
+    li {
+      margin: 5px;
+    }
+    .delete-btn, .edit-btn {
+      margin-left: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .delete-btn {
+      color: red;
+    }
+    .edit-btn {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Add or Edit Fruit (with Price)</h2>
+  <input type="text" id="fruitName" placeholder="Fruit Name">
+  <input type="number" id="fruitPrice" placeholder="Price">
+  <button id="addBtn" onclick="addFruit()">Add Fruit</button>
+  <button id="saveBtn" onclick="saveEdit()" style="display:none;">Save Edit</button>
+
+  <ul id="fruitList"></ul>
+
+  <script>
+    let fruits = JSON.parse(localStorage.getItem("fruits")) || [];
+    let editIndex = null;
+
+    function addFruit() {
+      const name = document.getElementById("fruitName").value.trim();
+      const price = document.getElementById("fruitPrice").value.trim();
+
+      if (name && price) {
+        fruits.push({ name, price: Number(price) });
+        saveToLocal();
+        renderList();
+        clearInput();
+      }
+    }
+
+    function deleteFruit(index) {
+      fruits.splice(index, 1);
+      saveToLocal();
+      renderList();
+    }
+
+    function editFruit(index) {
+      editIndex = index;
+      const fruit = fruits[index];
+      document.getElementById("fruitName").value = fruit.name;
+      document.getElementById("fruitPrice").value = fruit.price;
+      document.getElementById("addBtn").style.display = "none";
+      document.getElementById("saveBtn").style.display = "inline-block";
+    }
+
+    function saveEdit() {
+      const name = document.getElementById("fruitName").value.trim();
+      const price = document.getElementById("fruitPrice").value.trim();
+
+      if (name && price && editIndex !== null) {
+        fruits[editIndex] = { name, price: Number(price) };
+        editIndex = null;
+        saveToLocal();
+        renderList();
+        clearInput();
+        document.getElementById("addBtn").style.display = "inline-block";
+        document.getElementById("saveBtn").style.display = "none";
+      }
+    }
+
+    function clearInput() {
+      document.getElementById("fruitName").value = "";
+      document.getElementById("fruitPrice").value = "";
+    }
+
+    function saveToLocal() {
+      localStorage.setItem("fruits", JSON.stringify(fruits));
+    }
+
+    function renderList() {
+      const fruitList = document.getElementById("fruitList");
+      fruitList.innerHTML = "";
+
+      fruits.forEach((fruit, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${fruit.name} - ₹${fruit.price}`;
+
+        const delBtn = document.createElement("span");
+        delBtn.textContent = "❌";
+        delBtn.className = "delete-btn";
+        delBtn.onclick = () => deleteFruit(index);
+
+        const editBtn = document.createElement("span");
+        editBtn.textContent = "✏️";
+        editBtn.className = "edit-btn";
+        editBtn.onclick = () => editFruit(index);
+
+        li.appendChild(editBtn);
+        li.appendChild(delBtn);
+        fruitList.appendChild(li);
+      });
+    }
+
+    renderList();
+  </script>
+</body>
+</html>
+ 

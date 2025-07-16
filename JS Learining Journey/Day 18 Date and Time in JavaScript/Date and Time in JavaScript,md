@@ -1,0 +1,29 @@
+# 🔶 1. Theory: Date Object
+> The Date object lets you work with dates and times.
+
+### ✅ Create a Date object:
+```js
+let now = new Date();
+console.log(now);
+```
+
+### ✅ Common Methods of Date Object:
+- Method            | Description
+- getFullYear()	    | Gets the year (e.g. 2025)
+- getMonth()	    | Gets the month (0 = Jan, 11 = Dec)
+- getDate()	        | Gets the day of the month
+- getDay()	        | Gets the weekday (0 = Sunday, 6 = Saturday)
+- getHours()	    | Gets the hour
+- getMinutes()	    | Gets the minutes
+- getSeconds()	    | Gets the seconds
+- toLocaleString()	| Converts date to a readable format
+
+#### 🔧 Example:
+```js
+let now = new Date();
+console.log("Year:", now.getFullYear());
+console.log("Month:", now.getMonth() + 1); // +1 because it's 0-based
+console.log("Date:", now.getDate());
+console.log("Hour:", now.getHours());
+console.log("Minutes:", now.getMinutes());
+```

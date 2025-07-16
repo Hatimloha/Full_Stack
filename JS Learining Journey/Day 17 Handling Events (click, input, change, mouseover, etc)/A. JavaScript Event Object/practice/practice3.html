@@ -1,0 +1,60 @@
+<!-- Log the type of any event (event.type) when triggered. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Refreshing</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 28px;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        input{
+            font-size: 28px;
+            padding: 10px;
+        }
+
+        button{
+            font-size: 28px;
+            padding: 10px;
+            font-weight: bolder;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 15%;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: green;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Stop Refreshing</h1>
+    <input type="text" id="userInput" placeholder="Enter Something...">
+    <button id="btn">Submit</button>
+    <h2 id="result"></h2>
+
+    <script>
+        let input = document.getElementById("userInput");
+        let button = document.getElementById("btn");
+        let result = document.getElementById("result")
+        
+        btn.addEventListener("click", (event) => {
+            result.textContent = `Type: ${event.type}`
+            result.style.color = "green"
+        })
+
+    </script>
+
+</body>
+</html>

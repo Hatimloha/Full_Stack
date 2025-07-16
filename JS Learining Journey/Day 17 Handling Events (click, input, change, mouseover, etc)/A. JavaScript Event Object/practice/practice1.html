@@ -1,0 +1,50 @@
+<!-- Create two buttons. Log which button was clicked using event.target. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Details</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            font-size: 28px;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        button{
+            font-size: 28px;
+            padding: 10px;
+            font-weight: bolder;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check Which Button Click</h1>
+    <button id="btn-1">Click Me - 1</button>
+    <button id="btn-2">Click Me - 2</button>
+    <h1 id="result"></h1>
+
+    <script>
+        let btn1 = document.getElementById("btn-1");
+        let btn2 = document.getElementById("btn-2");
+        let result = document.getElementById("result")
+
+        btn1.addEventListener("click", (event) => {
+            result.textContent = `You have click: ${event.target.textContent}`;
+            result.style.fontSize = "18px"
+
+        })
+
+        btn2.addEventListener("click", (event) => {
+            result.textContent = `You have click: ${event.target.textContent}`;
+            result.style.fontSize = "18px"
+        })
+
+    </script>
+</body>
+</html>

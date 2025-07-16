@@ -1,0 +1,58 @@
+<!-- Create a form and stop it from refreshing using event.preventDefault(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Refreshing</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 28px;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        input{
+            font-size: 28px;
+            padding: 10px;
+        }
+
+        button{
+            font-size: 28px;
+            padding: 10px;
+            font-weight: bolder;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 15%;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: green;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Stop Refreshing</h1>
+    <input type="text" id="userInput" placeholder="Enter Something...">
+    <button id="btn">Submit</button>
+
+    <script>
+        let input = document.getElementById("userInput");
+        let button = document.getElementById("btn");
+        
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            alert(`Hey ${input.value} !`);
+        })
+
+    </script>
+
+</body>
+</html>

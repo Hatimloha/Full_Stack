@@ -1,0 +1,48 @@
+<!-- Create a button that shows "Loading..." and then after 2 seconds changes to "Loaded ✅". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout - button</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 28px;
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        button{
+            background-color: white;
+            color: black;
+            font-size: 28px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: green;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <h1>setTimeout - btn</h1>
+    <button id="btn" onclick="handleClick()">Loading....</button>
+
+    <script>
+    function handleClick() {
+        let btn = document.getElementById("btn");
+        setTimeout(() => {
+            btn.textContent = "Loaded"
+            btn.style.backgroundColor = "green"
+        }, 2000);
+    }
+    </script>
+
+</body>
+</html>

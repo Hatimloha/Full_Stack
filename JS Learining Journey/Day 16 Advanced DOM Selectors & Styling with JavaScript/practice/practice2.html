@@ -1,0 +1,50 @@
+<!-- Create two buttons: one to increase font size of a paragraph, one to decrease it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontSize - Button</title>
+    <style>
+        body{
+            background-color: bisque;
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        button{
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 24px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Increase & Decrease fontSize</h1>
+    <p id="paragraph">
+        HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are fundamental technologies for web development. HTML provides the structure and content of a webpage, using elements like headings, paragraphs, images, links, and forms. It is the backbone of any webpage, defining the structure and the relationship between different content pieces. On the other hand, CSS is used to control the visual presentation of the HTML content. It enables developers to apply styles, such as colors, fonts, layouts, and animations, making websites not only functional but aesthetically pleasing. While HTML and CSS work closely together, they serve different purposes: HTML provides the content, and CSS enhances the look and feel of that content. With the advent of responsive design, CSS has become even more important, allowing websites to adapt to different screen sizes and devices. Together, HTML and CSS form the core of front-end web development, providing a seamless user experience and ensuring websites are both accessible and visually appealing across all platforms.
+    </p>
+    <button onclick="decreaseFont()">Decrease -</button>
+    <button onclick="increaseFont()">Increase + </button>
+
+    <script>
+        function decreaseFont(){
+            let paragraph = document.getElementById("paragraph")
+            let currentSize = window.getComputedStyle(paragraph).fontSize;
+            let newSize = parseInt(currentSize) - 2;
+            paragraph.style.fontSize = newSize + "px"
+        }
+
+        function increaseFont(){
+            let paragraph = document.getElementById("paragraph");
+            let currentSize = window.getComputedStyle(paragraph).fontSize;
+            let newSize = parseInt(currentSize) + 2;
+            paragraph.style.fontSize = newSize + "px"
+        }
+    </script>
+</body>
+</html>

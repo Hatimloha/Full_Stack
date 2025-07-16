@@ -1,0 +1,86 @@
+<!-- Replace fruit names with objects like {name: "Mango", price: 10} and show both name + price -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit List with Object</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 100px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px;
+    }
+
+    .delete-btn {
+      margin-left: 20px;
+      color: red;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Add Fruit (with Price)</h2>
+  <input type="text" id="fruitName" placeholder="Fruit Name">
+  <input type="number" id="fruitPrice" placeholder="Price">
+  <button onclick="addFruit()">Add Fruit</button>
+
+  <ul id="fruitList"></ul>
+
+  <script>
+    const fruits = [];
+    function addFruit(){
+        const name = document.getElementById("fruitName").value.trim();
+        const price = document.getElementById("fruitPrice").value.trim();
+
+        if(name !== "" && price !== ""){
+            fruits.push({name: name, price: Number(price)});
+            document.getElementById("fruitName").value = "";
+            document.getElementById("fruitPrice").value = "";
+            renderList();
+        }
+    }
+
+    function deleteFruit(index){
+        fruits.splice(index, 1);
+        renderList();
+    }
+
+    function renderList(){
+        const fruitList = document.getElementById("fruitList");
+        fruitList.innerHTML = "";
+
+        fruits.forEach((fruit, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${index + 1}. ${fruit.name} - ${fruit.price}`
+
+            const delBtn = document.createElement("span")
+            delBtn.textContent = "❌";
+            delBtn.className = "delete-btn";
+            delBtn.onclick = () => deleteFruit(index);
+
+            li.appendChild(delBtn);
+            fruitList.appendChild(li)
+        })
+    }
+
+  </script>
+</body>
+</html>
