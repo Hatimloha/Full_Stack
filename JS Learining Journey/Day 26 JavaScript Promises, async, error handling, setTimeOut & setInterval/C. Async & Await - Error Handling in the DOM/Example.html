@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch User Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+      text-align: center;
+    }
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Get User Data</h2>
+  <button onclick="getUser()">Load User</button>
+  <div id="result"></div>
+
+  <script>
+    async function getUser() {
+        const result = document.getElementById("result");
+        try{
+            const res = await fetch("https://jsonplaceholder.typicode.com/userz/1");
+            if(!res.ok){
+                throw new Error(`Status ${response.status} - ${response.statusText}`)
+            }
+            const user = res.json();
+            result.textContent = `User: ${user.name}`;
+        }catch(error){
+            result.textContent = "❌ Unable to fetch user. Please check your connection or try again later."
+            console.log("Error: " + error.message);
+        }
+    }
+  </script>
+</body>
+</html>

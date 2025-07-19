@@ -1,0 +1,28 @@
+<!-- 🧪 Example: Get Random Joke from Public API -->
+<h1 id="joke">Click to load a joke</h1>
+<button onclick="getJoke()">Get Joke</button>
+
+<script>
+  function getJoke() {
+    fetch("https://official-joke-api.appspot.com/random_joke")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("joke").textContent = `${data.setup} - ${data.punchline}`;
+      })
+      .catch(err => console.log("Error:", err));
+  }
+</script>
+
+
+<!-- ⚡ With async/await version: -->
+<script>
+    async function getJoke() {
+        try{
+            let res = await fetch("https://official-joke-api.appspot.com/random_joke");
+            let data = await res.json();
+            document.getElementById("joke").textContent = `${data.setup} - ${data.punchline}`;
+        }catch(error){
+            console.log(`Error: ${error}`)
+        }
+    }
+</script>

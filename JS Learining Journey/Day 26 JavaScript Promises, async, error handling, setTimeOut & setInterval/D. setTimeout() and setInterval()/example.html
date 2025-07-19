@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Countdown Timer</h1>
+  <h2 id="timerDisplay">10</h2>
+  <button onclick="startCountdown()">Start</button>
+  <button onclick="stopCountdown()">Stop</button>
+
+  <script>
+    let timer;
+    let count = 10;
+
+    function startCountdown() {
+      // Reset if already running
+      clearInterval(timer);
+      count = 10;
+      document.getElementById("timerDisplay").textContent = count;
+
+      timer = setInterval(() => {
+        count--;
+        document.getElementById("timerDisplay").textContent = count;
+
+        if (count <= 0) {
+          clearInterval(timer);
+        }
+      }, 1000);
+    }
+
+    function stopCountdown() {
+      clearInterval(timer);
+    }
+  </script>
+
+</body>
+</html>

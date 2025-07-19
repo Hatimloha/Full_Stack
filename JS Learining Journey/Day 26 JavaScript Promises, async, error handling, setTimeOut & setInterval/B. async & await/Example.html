@@ -1,0 +1,31 @@
+<!-- 🧪 Exercise 2: Sequentially fetch two posts
+Fetch two different posts one after another using async/await and log their titles. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sequential Fetch</title>
+</head>
+<body>
+  <h2>Check the console for post titles</h2>
+
+  <script>
+    async function fetchTwoPosts() {
+        try{
+            let res1 = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+            let data1 = await res1.json();
+            console.log("Post 1 title: ", data1.title);
+
+            let res2 = await fetch("https://jsonplaceholder.typicode.com/posts/2");
+            let data2 = await res2.json();
+            console.log("Post 2 title", data2.title)
+        }catch (error){
+            console.log("Failed to fetch posts:", error)
+        }
+    }
+
+    fetchTwoPosts();
+  </script>
+</body>
+</html>

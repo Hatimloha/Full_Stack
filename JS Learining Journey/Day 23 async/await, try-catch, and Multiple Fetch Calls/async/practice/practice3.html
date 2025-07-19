@@ -1,0 +1,43 @@
+<!-- Handle the case when an invalid API is used — show a custom error like: Failed to fetch! -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom API Error</title>
+    <style>
+        body{
+            margin-top: 150px;
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom API Error</h1>
+    <h2 id="output"></h2>
+    <h3 id="originalError"></h3>
+    <h3 id="customError"></h3>
+    <button onclick="loadData()">Load Data</button>
+
+    <script>
+        async function loadData() {
+            try{
+                let res = await fetch("https://jsonplaceholder.typicode.com/invalidendpoint");
+                if(!res.ok){
+                    throw new Error("Network response was not ok");
+                }
+                let data = await res.json();
+                document.getElementById("output").textContent = data.name;
+            }catch(error){
+                document.getElementById("originalError").textContent = `Original Error: ${error.message}`;
+                document.getElementById("customError").textContent = "❌ Custom Error: Failed to fetch!";
+            }
+        }
+    </script>
+</body>
+</html>

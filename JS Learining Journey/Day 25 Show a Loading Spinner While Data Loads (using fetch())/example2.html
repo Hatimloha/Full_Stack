@@ -1,0 +1,71 @@
+<!-- Build a Random Dog Image Viewer Using Fetch + DOM -->
+ <!-- Use a real API (https://dog.ceo/api/breeds/image/random) to fetch and display a random dog image every time the button is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Dog Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding-top: 50px;
+    }
+
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 2px solid #555;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐶 Click Below to Load a Random Dog</h1>
+  <button onclick="loadDogImage()">Load Dog</button>
+  <br />
+  <img id="dogImage" src="" alt="Random Dog" />
+  <p id="error"></p>
+
+  <script>
+    async function loadDogImage() {
+        const image = document.getElementById("dogImage");
+        const error = document.getElementById("error");
+
+        error.textContent = "Loading.....";
+        try{
+            const res = await fetch("https://dog.ceo/api/breeds/image/random");
+            let data = await res.json() 
+            if(data.status === "success"){
+                 image.src = data.message;
+                 error.textContent = "";
+            }else{
+                error.textContent = "Something went wrong! Try again"
+            }
+        }catch(error){
+            error.textContent = "❌ Failed to fetch image. Please check your connection";
+        }
+    }
+  </script>
+
+</body>
+</html>

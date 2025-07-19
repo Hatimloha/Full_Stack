@@ -1,0 +1,36 @@
+<!-- Get a list of users from:
+https://jsonplaceholder.typicode.com/users
+Display their names in a list. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API -List of Users</title>
+</head>
+<body>
+    <h1>List Of User</h1>
+    <ul id="userList"></ul>
+    <button onclick="userLoad()">Load User</button>
+
+    <script>
+        async function userLoad(){
+            try{
+                let res = await fetch("https://jsonplaceholder.typicode.com/users");
+                let data = await res.json();
+                let userList = document.getElementById("userList");
+                userList.innerHTML = "";
+                data.forEach(user => {
+                    let li = document.createElement("li");
+                    li.textContent = user.name;
+                    userList.appendChild(li)          
+                });
+            }catch(error){
+                console.log(error)
+            }
+
+        }
+    </script>
+</body>
+</html>

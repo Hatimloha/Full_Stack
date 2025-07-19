@@ -1,0 +1,51 @@
+<!-- Update the DOM or log the data.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Refresh Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: black;
+      color: white;
+    }
+    #data {
+      font-size: 1.5em;
+      color: darkgreen;
+      margin-top: 20px;
+    }
+    button{
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Auto-Refresh Post Title</h1>
+  <div id="data">Waiting for data...</div>
+  <button onclick="stopRefresh()">Stop Refresh</button>
+
+  <script>
+    let intervalid = setInterval(async () => {
+        try{
+            let res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+            let data = await res.json();
+            document.getElementById("data").textContent = `Title: ${data.title}`
+        }catch (err){
+            document.getElementById("data").textContent = "Failed to fetch data!";
+        }
+    }, 5000);
+
+    function stopRefresh(){
+        clearInterval(intervalid);
+        document.getElementById("data").textContent = "Auto-refresh stopped.";
+        document.getElementById("data").style.color = "red"
+    }
+  </script>
+
+</body>
+</html>

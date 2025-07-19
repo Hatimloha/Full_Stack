@@ -1,0 +1,72 @@
+# ✅ Day 25: Show a Loading Spinner While Data Loads (using fetch())
+
+> Learn how to display a loading indicator while fetching data from an API and then show the data.
+
+### 🧪 Task:
+- Show a spinner/message while data is being fetched.
+- Replace it with data once fetched.
+
+#### We'll use this API:
+> 🔗 https://jsonplaceholder.typicode.com/posts/1
+
+#### Code:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loading Spinner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #loading {
+      font-size: 24px;
+      color: blue;
+      margin-top: 20px;
+    }
+
+    #postTitle {
+      font-size: 28px;
+      color: darkgreen;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fetch Post Title</h1>
+  <button onclick="loadData()">Fetch Data</button>
+
+  <div id="loading"></div>
+  <h2 id="postTitle"></h2>
+
+  <script>
+    async function loadData() {
+      const loadingDiv = document.getElementById("loading");
+      const postTitle = document.getElementById("postTitle");
+
+      // Show loading text
+      loadingDiv.textContent = "⏳ Loading...";
+      postTitle.textContent = "";
+
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const data = await res.json();
+
+        // Hide loading, show title
+        loadingDiv.textContent = "";
+        postTitle.textContent = `📄 ${data.title}`;
+      } catch (error) {
+        loadingDiv.textContent = "❌ Failed to load data!";
+      }
+    }
+  </script>
+
+</body>
+</html>
+```

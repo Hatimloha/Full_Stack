@@ -1,0 +1,24 @@
+<!-- Showing a splash screen after a delay -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splash screen</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        setInterval(() => {
+            document.body.style.backgroundColor = "red";
+        }, 500);
+        setInterval(() => {
+            document.body.style.backgroundColor = "black";
+        },600)
+    </script>
+</body>
+</html>

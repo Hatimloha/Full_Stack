@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delayed Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+      text-align: center;
+    }
+    #message {
+      color: red;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter your name</h2>
+  <input type="text" id="nameInput" placeholder="Type something..." />
+  <div id="message"></div>
+
+  <script>
+    const input = document.getElementById("nameInput");
+    const message = document.getElementById("message");
+    let timeoutId;
+
+    input.addEventListener("input", () => {
+      clearTimeout(timeoutId); // Clear previous timeout
+      message.textContent = ""; // Clear previous message
+
+      // Wait for 2 seconds after user stops typing
+      timeoutId = setTimeout(() => {
+        if (input.value.trim() === "") {
+          message.textContent = "Name cannot be empty!";
+        } else {
+          message.textContent = "";
+        }
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
