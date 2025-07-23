@@ -1,0 +1,72 @@
+<!-- 🔐 Mock Login with sessionStorage -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mock Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+
+    input {
+      margin: 10px;
+      padding: 8px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #welcome {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Login Mock (Session Storage)</h2>
+
+  <div id="loginForm">
+    <input type="text" id="username" placeholder="Username" /><br>
+    <input type="password" id="password" placeholder="Password" /><br>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="welcome"></div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user && pass) {
+        sessionStorage.setItem("username", user);
+        sessionStorage.setItem("password", pass);  // ⚠️ Not secure in real apps
+
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("welcome").textContent = `Welcome, ${user}!`;
+      } else {
+        alert("Please enter both username and password.");
+      }
+    }
+
+    // Auto-show welcome message if already logged in during session
+    window.onload = function () {
+      const savedUser = sessionStorage.getItem("username");
+      if (savedUser) {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("welcome").textContent = `Welcome back, ${savedUser}!`;
+      }
+    };
+  </script>
+
+</body>
+</html>
