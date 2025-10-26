@@ -29,8 +29,8 @@ createUser.prototype.printMe = function(){
     console.log(`Score is: ${this.score}`)
 }
 
-const chai = new creteUser('chai', 25) // We need new keyword to print the value otherwise it will give error due to not having context
-const chai = new creteUser('tea', 250)
+const chai = new createUser('chai', 25) // We need new keyword to print the value otherwise it will give error due to not having context
+const chai = new createUser('tea', 250)
 
 chai.printMe()
 ```
