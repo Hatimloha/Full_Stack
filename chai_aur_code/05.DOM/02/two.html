@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Chai Aur Code</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent" >
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+    </div>
+
+    <script>
+
+        // // example 1
+        const parent = document.getElementsByClassName('parent');
+        // console.log(parent);
+        // console.log(parent[0].children) // HTMLCollection
+        // console.log(parent[0].children[1].innerHTML) // tuesday
+
+        // for(let i = 0; i < parent[0].children.length; i++){
+        //     console.log(parent[0].children[i].innerHTML)
+        // }
+
+        // example 2
+        // parent[0].children[1].style.color = 'orange';
+
+        // Example 3: parent to child element 
+        // console.log(parent[0].firstElementChild);
+        // console.log(parent[0].LastElementChild);
+        
+
+        // // Example 4: child to parent element search (it will not traverse tree to find which mean DSA)
+        const day = document.querySelector('.day');
+        // console.log(day);
+        // console.log(day.parentElement);
+        // console.log(day.nextElementSibling); // Monday => Tuesday => Wednesday (sibling);
+
+
+        // Imp => Example 5: ChildNodes
+        // console.log('Nodes:', parent[0].childNodes);
+
+        // // Example 6: Create element: 
+        // const div = document.createElement('div');
+        // div.className = 'main';
+        // div.id = Math.round(Math.random() * 10 + 1); 
+        // div.setAttribute('title', 'generated title');
+        // div.style.backgroundColor = 'green';
+        // div.style.padding = '10px';
+        // // div.innerHTML = 'Chai aur Code'
+        // const addText = document.createTextNode('Chai aur Code') // As DSA point of view this method is better then innerText;
+        // div.appendChild(addText);
+        // document.body.appendChild(div);
+
+    </script>
+
+</body>
+</html>

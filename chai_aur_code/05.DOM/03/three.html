@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code || DOm</title>
+</head>
+<body style="background-color:black; color: white;">
+
+    <div class="language">
+        <li>JavaScript</li>
+    </div>
+    
+</body>
+<script>
+
+    // // Example 1: 
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = langName;
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('python')
+    addLanguage('typeScript')
+
+
+
+    // // Example 2: This is the optimize one (In above example it tranverse the tree every time to append the object not good for large data);
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    } 
+    addOptiLanguage('golang');
+
+    // // Example 3: select li & replaceWith
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = 'Mojo'; // Not optimize 
+    const newLi = document.createElement('li');
+    newLi.textContent = 'Mojo';
+    secondLang.replaceWith(newLi) // this will replace python
+
+
+    // // Example 4: outerHTML
+    // // => outerHTML => In this we have write the code with tag <li>TypeScript</li>.
+    // const firstLang = document.querySelector('li:nth-child(1)');
+    // firstLang.outerHTML = '<li>TypeScript</li>'
+
+
+    // // Example 5: Remove
+    // const lastChild = document.querySelector('li:last-Child');
+    // lastChild.remove(); 
+
+
+</script>
+</html>

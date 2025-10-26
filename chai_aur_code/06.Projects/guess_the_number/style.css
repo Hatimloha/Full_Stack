@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#wrapper{
+    background-color: grey;
+    width: 800px;
+    margin: auto;
+    font-size: 30px; 
+    border-radius: 20px;
+}
+
+#wrapper h1{
+    font-size: 40px;
+    background-color: red;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input{
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.guessSubmit{
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* margin-bottom: 20px; */
+}
+
+.resultPass{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

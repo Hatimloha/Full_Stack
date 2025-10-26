@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+    <script>
+        // // Writting event in this way provide limited functionality
+        // document.getElementById('owl').onclick = function(){
+        //     alert('owl is clicked')
+        // }
+
+        // // addEventListener
+        // document.getElementById('owl').addEventListener('click', () => {
+        //     alert('owl is clicked')
+        // })
+
+
+        // // Learn this thing in more details: 
+        // e, timeStamp, defaultPrevented
+        // target, srcElement, toElement, currentTarget, 
+        // clientX, clientY, screenX, screenY
+        // altKey, ctrlKey, shiftKey, keyCode
+        // How to check this things:
+        // document.getElementById('owl').addEventListener('click', (e) => {
+        //     console.log(e)
+        // })
+
+
+        // // What is false and true (Default is false);
+        // document.getElementById('owl').addEventListener('click', (e) => {
+        //     console.log(e)
+        // }, false)
+
+        // 1. Propogation (bubbling): down to up 
+        // 2. Capturing Mode: up to down
+
+        // example to understand this: 
+        // document.getElementById('images').addEventListener('click', function(){
+        //     console.log('UL is clickef')
+        // }, false)  // change it to true to get the difference
+
+        // document.getElementById('owl').addEventListener('click', (e) => {
+        //     console.log('Owl is clicked')
+        // }, false)    // change it to true to get the difference
+
+        // // Output: 
+        // 1. Bubling: 
+        // Owl is clicked
+        // UL is clickef
+
+        // 2. capturing:
+        // UL is clickef
+        // Owl is clicked
+
+
+        // // Stop propogation: 
+        // document.getElementById('owl').addEventListener('click', (e) => {
+        //     console.log('Owl is clicked')
+        //     e.stopPropagation()
+        // },)    // change it to true to get the difference
+
+
+        // // preventDefault: 
+        // document.getElementById('google').addEventListener('click', (e) => {
+        //     console.log('google clicked');
+        //     e.preventDefault()
+        // }, false)
+
+
+        // // Task: image removed after clicking in the particular Li:
+        // document.querySelector('#images').addEventListener('click', function(e){
+        //     e.stopPropagation();
+        //     let removeIt = e.target.parentNode
+        //     removeIt.remove()
+               // removeIt.parentNode.removeChild(removeIt) 
+        // }, false)
+
+        // Above method have a issue if the target parentNode is higher it will remove it all example img < li < ul < body. so there is no restriction:
+        document.querySelector('#images').addEventListener('click', function(e){
+            e.stopPropagation();
+            let removeIt = e.target.tagName;
+            if(e.target.tagName == 'IMG'){
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+        }, false)
+
+
+
+        // attachEvent() => This was use earlier for the internal explorer
+
+        // jQuery - .on  => use in jQuery
+    </script>
+</html>

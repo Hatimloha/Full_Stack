@@ -1,0 +1,27 @@
+*{
+padding: 0;
+margin: 0;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.container p{
+    width: 15%;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}

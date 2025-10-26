@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 150px;">
+        <h1>Background color will change every seconds after start</h1>
+        <div>
+            <button id="start"
+        style="padding: 10px; font-size: 40px; margin: 20px; cursor: pointer; border-radius: 10px; "
+        >Start</button>
+        <button id="stop"
+        style="padding: 10px; font-size: 40px; margin: 20px; cursor: pointer; border-radius: 10px;  "
+        >Stop</button>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let randomColor = function(){
+        let hex = '0123456789ABCDEF'
+        let color = '#';
+        for(let i = 0; i < 6; i++){
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    }
+
+    let intervalId = null;
+
+    const startChangeColor = function(){
+        if(!intervalId){
+
+            
+            const changeBgColor = function(){
+                document.body.style.backgroundColor = randomColor() 
+            }
+            
+            intervalId = setInterval(changeBgColor, 1000)
+        }
+    }
+
+    const stopChangeColor = function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    document.querySelector("#start").addEventListener('click', startChangeColor)
+
+    document.querySelector("#stop").addEventListener('click', stopChangeColor)
+
+</script>
+
+</html>

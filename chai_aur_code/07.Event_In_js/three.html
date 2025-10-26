@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chai Aur JS</h1>
+    <h1 class="clock"></h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+    const clock = document.querySelector('.clock')
+    let intervalId = null;
+
+    const clockTime = () => {
+        const date = new Date();
+        clock.innerHTML = date.toLocaleTimeString()
+    }
+
+    document.querySelector("#start").addEventListener('click', () => {
+        if(!intervalId){
+            intervalId = setInterval(clockTime, 1000)
+        }
+    })
+
+    document.querySelector("#stop").addEventListener('click', () => {
+        clearInterval(intervalId);
+        intervalId = null;
+    })
+    
+    clockTime()
+</script>
+</html>

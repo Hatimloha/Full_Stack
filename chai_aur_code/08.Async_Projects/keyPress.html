@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press Detect</title>
+    <style> 
+        body{
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+            margin-top: 20%;
+        }
+
+        .keyTable table {
+            border-collapse: collapse; /* makes borders cleaner */
+            width: 100%; /* optional, for full width */
+        }
+
+        .keyTable table th,
+        .keyTable table td {
+            border: 2px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .keyTable table tr:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* nice hover effect */
+        }
+
+    </style>
+</head>
+<body>    
+
+    <div class="project">
+        <div id="insert">Press the keys and watch the magic
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    let insert  = document.querySelector('#insert');
+
+    window.addEventListener('keydown', (e) => {
+        insert.innerHTML = `
+        <div class='keyTable'>
+            <table>
+            <tr>
+                <th>Key</th>
+                <th>KeyCode</th>
+                <th>code</th>
+            </tr>
+            <tr>
+                <td>${e.key == ' ' ? 'space' : e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+        </table>
+        </div>
+        `
+    })
+
+</script>
+</html>

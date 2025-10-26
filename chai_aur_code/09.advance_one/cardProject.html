@@ -1,0 +1,79 @@
+<!-- Creating a card from Github API -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Card</title>
+    <style>
+        body{
+            background-color: black;
+      
+        }
+
+        .container{
+            background-color: white;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 5px 5px red;
+            overflow: hidden;
+        }
+
+        .container img{
+            object-fit: cover;
+            padding-top: 10px;
+            width: 350px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="" alt="HatimLoha" class="imageSection">
+        <h1 class="name">Name: </h1>
+        <h1 class="followers">Follower:</h1>
+        <h1 class="following">following:</h1>
+    </div>
+
+</body>
+
+<script>
+
+    async function image() {
+        const requestUrl = 'https://api.github.com/users/Hatimloha'
+        try{
+            const response = await fetch(requestUrl);
+            if(!response.ok){
+                throw new Error(`Response status: ${response.status}`);
+            }
+            const result = await response.json();
+
+            const imageSection = document.querySelector('.imageSection')
+
+            imageSection.src = result.avatar_url
+
+            document.querySelector('.name').innerHTML = `Name: ${result.login}`
+
+            document.querySelector('.followers').innerHTML = `followers: ${result.followers}`
+
+            document.querySelector('.following').innerHTML = `following: ${result.following}`
+
+        }catch(error){
+            console.error(error.message)
+        }
+    }
+    image()
+
+
+
+</script>
+
+</html>
