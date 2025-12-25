@@ -1,0 +1,7 @@
+.invert{
+    filter: invert(1);
+}
+
+.p-1{
+    padding-top: 60px;
+}
