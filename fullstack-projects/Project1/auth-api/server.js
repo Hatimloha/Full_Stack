@@ -17,7 +17,10 @@ const app = express()
 
 
 // URL whitelisting
-app.use(cors())
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}))
 
 // Allow JSON 
 app.use(express.json())

@@ -1,4 +1,4 @@
-import { User } from '../models/user.model.js'
+import User  from '../models/user.model.js'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
@@ -32,6 +32,7 @@ export const registerUser = async (req, res) => {
         })
 
     } catch (error) {
+        console.log('Register Error', error)
         res.status(500).json({ message: error.message })
     }
 }
