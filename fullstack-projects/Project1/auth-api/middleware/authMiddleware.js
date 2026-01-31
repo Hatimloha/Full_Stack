@@ -6,7 +6,7 @@ const protect = async (req, res, next) => {
         let token = req.cookies.token
         
         if(!token){
-            return req.this.status(401).json({message: 'Not authorized, no token'})
+            return req.status(401).json({message: 'Not authorized, no token'})
         }
 
         const decode = jwt.verify(token, process.env.JWT_SECRET)

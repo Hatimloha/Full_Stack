@@ -2,6 +2,11 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import api from './api'
 
+const logout =async () => {
+    await api.post('/api/auth/logout')
+    window.location.href = '/'
+}
+
 const Dashboard = () => {
   const [notes, setNotes] = useState([])
   const [title, setTitle] = useState('')
@@ -23,6 +28,11 @@ const Dashboard = () => {
     fetchNotes()
   }
 
+  const updateNote = async(id) => {
+    await api.put(`/api/notes/${id}`)
+    fetchNotes()
+  }
+
   useEffect(() => {
     fetchNotes()
   }, [])
@@ -39,10 +49,29 @@ const Dashboard = () => {
         <button>Add</button>
       </form>
 
+      <button onClick={logout}>Logout</button>
+
       {notes.map((n) => (
         <div key={n._id}>
-          <h4>{n.title}</h4>
-          <p>{n.description}</p>
+          <input type="text" 
+          value={n.title}
+          onChange={(e) => {
+            const update = [...notes]
+            update.find(x => x._id === n._id).title = e.target.value;
+            setNotes(update)
+          }}
+          />
+
+          <input type="text"
+          value={n.description}
+          onChange={(e) => {
+            const update = [...description]
+            update.find(x => x._id === n._id).description = e.target.value;
+            setdescription(update)
+          }}
+          />
+
+          <button onClick={() => updateNote(n._id)}>update</button>
           <button onClick={() => deleteNote(n._id)}>Delete</button>
         </div>
       ))}
