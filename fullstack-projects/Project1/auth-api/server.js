@@ -15,7 +15,7 @@ const app = express();
 /* 🔥 MUST BE FIRST */
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CORS || "https://project1-frontend-delta.vercel.app",
     credentials: true
   })
 );
