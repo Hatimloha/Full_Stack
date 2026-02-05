@@ -15,7 +15,7 @@ const app = express();
 /* 🔥 MUST BE FIRST */
 app.use(
   cors({
-    origin: process.env.CORS || "https://project1-frontend-delta.vercel.app",
+    origin: process.env.CORS || "https://project1-frontend-amber.vercel.app",
     credentials: true
   })
 );
