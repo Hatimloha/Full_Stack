@@ -1,7 +1,7 @@
 import User  from '../models/user.model.js'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-
+import cloudinary from '../config/cloudinary.js'
 
 export const registerUser = async (req, res) => {
     try {
@@ -81,3 +81,16 @@ export const loginUser = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 } 
+
+
+export const uploadAvatar = async(req, res) => {
+    const result = await cloudinary.uploader.upload(req.file.path);
+
+    const user = await User.findByIdAndUpdate(
+        req.user._id,
+        {avatar: result.secure_url},
+        {new: true}
+    );
+
+    res.json(user)
+}
