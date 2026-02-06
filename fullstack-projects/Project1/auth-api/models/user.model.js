@@ -23,6 +23,11 @@ const userSchema = mongoose.Schema(
        },
        avatar: {
         type: String
+       },
+       role: {
+        type: String,
+        eum: ["admin", "user"],
+        default: 'user'
        }
     },{timestamps: true})
 

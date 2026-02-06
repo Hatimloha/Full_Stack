@@ -1,21 +1,24 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import './App.css'
 import PrivateRoute from './components/PrivateRoute'
+import Taskboard from './pages/Taskboard'
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-          <Route path='/' element={<Login/>} />
-          <Route path='/register' element={<Register/>} />
-          <Route path='/dashboard' 
+        <Route path='/' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/dashboard'
           element={<PrivateRoute>
-                      <Dashboard/>
-                  </PrivateRoute>} />
+            <Dashboard />
+          </PrivateRoute>} />
+        <Route path='/taskboard' element={<Taskboard/>}/>
+        
       </Routes>
     </BrowserRouter>
   )

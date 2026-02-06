@@ -6,6 +6,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import noteRoutes from "./routes/noteRoutes.js";
 import path from 'path'
+import taskRoutes from './routes/taskRoutes.js'
 
 dotenv.config();
 connectDB();
@@ -15,7 +16,7 @@ const app = express();
 /* 🔥 MUST BE FIRST */
 app.use(
   cors({
-    origin: process.env.CORS || "https://project1-frontend-amber.vercel.app",
+    origin: process.env.CORSLOCAL || "https://project1-frontend-amber.vercel.app",
     credentials: true
   })
 );
@@ -25,6 +26,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
+app.use("/api/tasks", taskRoutes)
 
 app.get("/", (req, res) => {
   res.send("API Running");

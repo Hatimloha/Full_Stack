@@ -181,6 +181,14 @@ const Dashboard = () => {
         <button disabled={page === pages} onClick={() => setPage(page + 1)}>Next</button>
 
       </div>
+
+      {/* Admin Button */}
+      {user.role === 'admin' && (
+        <button onClick={() => alert('Admin Page')}
+        className='text-white mt-10'
+        >Admin Panel</button>
+      )}
+
     </div>
   )
 }

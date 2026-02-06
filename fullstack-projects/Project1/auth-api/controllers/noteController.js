@@ -4,7 +4,7 @@ import Note from "../models/Note.model.js";
 // Create Notes
 export const createNote = async (req, res) => {
 
-    console.log('CreateNote is under use');
+    // console.log('CreateNote is under use');
 
     const note = await Note.create({
         user: req.user._id,
